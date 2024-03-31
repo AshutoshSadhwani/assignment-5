@@ -1,24 +1,32 @@
 // script.js
 
-// TODO: STEP 0 - Ensure access to randomCategoryShortName variable
-var randomCategoryShortName = ""; // This should be populated with a random category short name
-
-// TODO: STEP 1 - Generate a random category short name
+// Function to generate a random category short name
 function generateRandomCategoryShortName() {
-    // Logic to generate a random category short name
-    // Assign the generated value to randomCategoryShortName
+    // Array of possible category short names
+    var categories = ["Lunch", "Dinner", "Sushi", "Drinks", "Desserts"];
+    
+    // Generate a random index to select a category from the array
+    var randomIndex = Math.floor(Math.random() * categories.length);
+    
+    // Return the randomly selected category short name
+    return categories[randomIndex];
 }
 
-// TODO: STEP 2 - Define function to load menu items for a given category
+// Function to load menu items for a given category
 function loadMenuItems(categoryShortName) {
     // Logic to load menu items for the given category
+    console.log("Loading menu items for category: " + categoryShortName);
 }
 
-// TODO: STEP 3 - Define function to handle click on Specials tile
+// Function to handle click on Specials tile
 function handleSpecialsTileClick() {
-    // Logic to handle click on Specials tile
-    // Use randomCategoryShortName to load menu items for a random category
+    // Generate a random category short name
+    var randomCategoryShortName = generateRandomCategoryShortName();
+    
+    // Load menu items for the random category
+    loadMenuItems(randomCategoryShortName);
 }
 
-// TODO: STEP 4 - Attach event listener to Specials tile
+// Attach event listener to Specials tile
 document.getElementById("specials-tile").addEventListener("click", handleSpecialsTileClick);
+
